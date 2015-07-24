@@ -68,7 +68,9 @@
                 >
             <div id="left-column">
                 <h2>How it works?</h2>
-                <span >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley</span>
+                <div >Through Staffino your customers can leave feedback specifically to your staff. Make your venue a
+                    better place to work at by showing real-time appreciations from customers directly on the
+                    screen. It makes staff happier, it makes customers to spend more.</div>
                 <iframe id="youtube-iframe" src="https://www.youtube.com/embed/fsshnqanBL4?autohide=1&color=white&showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 
@@ -94,14 +96,21 @@
                     <h5>Real time feedbacks:</h5>
                     <div id="realtime-toggle">
                         <switch id="enabled" name="enabled" ng-model="settings.realtime" on="yes" off="no" ></switch>
-                        <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's </div>
+
+                        <div ng-show="settings.realtime">We will display last 20 feedback items customers left at your venue.
+                        </div>
+
+                        <div ng-show="!settings.realtime">We will display 20 feedback items you specifically select in your
+                            account on app.staffino.com</div>
                     </div>
                 </div>
 
                 <div id="frequency-container">
-                    <h5>Video vs. feedbacks <span id="frequncy-ratio"> ({{ratio}}) </span> </h5>
+                    <h5>Ask for feedback   vs.   display feedback? <span id="frequncy-ratio"> ({{ratio}}) </span> </h5>
                     <div id="frequency-text">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                        The more right you set the bar, the more feedback we will display to your staff and customers.
+                        If you push the bar more to the left, we will show a video explaining your customers how to
+                        leave feedback through Staffino more.
                     </div>
                     <input type="range"
                            ng-model="settings.videoFrequency"
@@ -109,10 +118,10 @@
                            min="-10"
                            max="30">
                     <span id="slider-text-left" >
-                        Video
+                        Ask for feedback
                     </span>
                     <span id="slider-text-right" >
-                        Feedbacks
+                        Display feedback
                     </span>
                 </div>
                 <div id="config-error-message">
